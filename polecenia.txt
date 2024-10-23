@@ -1,0 +1,26 @@
+c:\Projekty\Kursy\5_Django\materialy_do_kursu\djangoblog_dev\mydjango 
+
+python -m venv myvenv
+=>
+python -m venv mydjango
+
+--potem:
+wejdz do mydjango
+wejdz do scripts
+
+wpisz activate
+:)
++ aktualizacja pythona i pip
+
+czy mam pip:
+py -m pip --version
+python -m pip --version
+
+python -m pip install --upgrade pip
+(spodziewane: already satisfied)
+
+finalnie:
+pip install Django
+
+potem opcjonalnie
+pip list
