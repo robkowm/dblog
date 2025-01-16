@@ -2,18 +2,22 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Blog dv dla programistów</title>
+    <title>Blog do nauki Pth / Djg </title>
 </head>
 <body>
 <div>
     <h1>Jezus jest Panem! 2025 dla Jezusa!</h1>
-    <h2>no i super :)</h2>
+
 </div>
+{% for post in posts %}
 <div>
-<p>Yo, uzerze!</p>
-    <em>BTC mam i chcę mądrze wykorzystać</em>
-    <strong>A potem money up :) I Crown, i inne takie :D  - UPDATE GIT test</strong>
+    <p>opublikowany: {{ post.published_date }}</p>
+    <h2>{{ post.title }}</h2>
+    <em>{{ post.text|linebreaksbr  }}</em>
+
+
 </div>
+{% endfor %}
 
 </body>
 </html>
