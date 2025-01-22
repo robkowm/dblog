@@ -1,30 +1,20 @@
-{% load static %}
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog do nauki Pth / Djg </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/blog.css'%}">
-
-    <link rel="stylesheet" href="C:\Projekty\Kursy\5_Django\materialy_do_kursu\djangoblog_dev\mydjango\Scripts\blog\static\css\blog.css">
 
 
-</head>
-<body>
-<div>
-    <h1>Jezus jest Panem! 2025 dla Jezusa!</h1>
-    <h1>Folder {% static 'css/blog.css' %}</h1>
+{% extends 'blog/base.html' %}
 
-</div>
-{% for post in posts %}
-<div>
-    <p>opublikowany: {{ post.published_date }}</p>
-    <h2><a href="#"> {{ post.title }}</a></h2>
-    <em>{{ post.text|linebreaksbr  }}</em>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <p class="data">opublikowany: {{ post.published_date }}</p>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}"> {{ post.title }}</a></h2>
+            <em>{{ post.text|linebreaksbr  }}</em>
+            <div class="zeroFont"> to szablon! PK {{ post.pk }}</div>
 
 
-</div>
-{% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}
 
-</body>
-</html>
+{% comment %}
+   url 'post_detail' pk=post.pk
+{% endcomment %}
