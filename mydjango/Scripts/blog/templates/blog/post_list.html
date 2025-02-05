@@ -3,16 +3,24 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div>lista</div>
+
     {% for post in posts %}
         <div class="post">
             <p class="data">opublikowany: {{ post.published_date }}</p>
             <h2><a href="{% url 'post_detail' pk=post.pk %}"> {{ post.title }}</a></h2>
+
+
+            <img src="{{ post.image.url }}" alt="Obrazek" width="100px" >
+            <br>
+
             <em>{{ post.text|linebreaksbr  }}</em>
             <div class="zeroFont"> to szablon! PK {{ post.pk }}</div>
 
 
         </div>
     {% endfor %}
+
 {% endblock %}
 
 {% comment %}
