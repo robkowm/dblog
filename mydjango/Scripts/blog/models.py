@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from PIL import Image
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
