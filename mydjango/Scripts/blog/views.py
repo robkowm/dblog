@@ -13,7 +13,7 @@ class Image(TemplateView):
     template_name = 'blog/image.html'
 
     def post(self, request, *args, **kwargs):
-        form = ImgForm(request.POST, request.FILES)
+        form = ImgForm(request.POST, None)
         if form.is_valid():
             obj = form.save();
             return HttpResponseRedirect(reverse_lazy('image_display', kwargs={'pk':obj.id}))
