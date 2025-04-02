@@ -19,13 +19,14 @@ from django.urls import path, include, re_path
 from django.conf import settings
 from django.views.static import serve
 from django.conf.urls.static import static
-from blog.views import Image, ImageDisplay
+# from blog.views import Image, ImageDisplay
+from blog.views import  ImageDisplay
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
-    path('image/', Image.as_view(), name='image'),
-    path('image/<int:pk>/', ImageDisplay.as_view(), name='image_display'),
+    # path('image/', Image.as_view(), name='image'),
+    # path('image/<int:pk>/', ImageDisplay.as_view(), name='image_display'),
 
     # https://stackoverflow.com/questions/5836674/why-does-debug-false-setting-make-my-django-static-files-access-fail
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
