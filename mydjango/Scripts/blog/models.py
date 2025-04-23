@@ -12,9 +12,9 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True,null=True)
 
-    image = models.TextField()
+    # image = models.TextField()
     dUrl = 'https://www.trwalamotywacja.pl/img/tripwire/trzy-kroki-okladka.png'
-    # image = models.ImageField(null=True, blank=True, upload_to='images/', default='images/car.png')
+    image = models.ImageField(null=True, blank=True, upload_to='images/', default='images/car.png')
 
     def publish(self):
         self.published_date = timezone.now()
