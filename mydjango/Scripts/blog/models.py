@@ -14,7 +14,7 @@ class Post(models.Model):
 
     # image = models.TextField()
     dUrl = 'https://www.trwalamotywacja.pl/img/tripwire/trzy-kroki-okladka.png'
-    image = models.TextField('abc')
+    image = models.TextField(default='abc')
     # image = models.ImageField(null=True, blank=True, upload_to='images/', default='images/car.png')
 
     def publish(self):
